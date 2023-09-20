@@ -6,10 +6,16 @@ import org.json4s.jackson.Serialization
 import whu.edu.cn.util.HttpRequestUtil.sendPost
 
 import java.io.{BufferedWriter, File, FileWriter}
+import java.util.Calendar
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 
 object Table {
+  def main(args: Array[String]): Unit = {
+    hargreaves("temperature2006", "climateStation", "2006-01-01 00:00:00", "2006-12-31 00:00:00", 86400L)
+//    topModel(null, null, "2006-01-01 12:00:00", "2006-12-31 12:00:00", 86400L, 9.66, 90, 240000, 3, 124800)
+//    SWMM5(null)
+  }
   def getDownloadUrl(url: String, fileName: String): Unit ={
     val writeFile = new File(fileName)
     val writerOutput = new BufferedWriter(new FileWriter(writeFile))
